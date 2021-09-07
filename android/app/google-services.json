@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "193518879645",
+    "project_id": "jtsboard-2021",
+    "storage_bucket": "jtsboard-2021.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193518879645:android:882f8d242aade8fe046574",
+        "android_client_info": {
+          "package_name": "com.jts.jtsboardapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "193518879645-pk549jboatk1148tt8so62kfr5h244ps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnF2VEqpD-_aDbNa1Rb_SNcwRp5OAq254"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "193518879645-pk549jboatk1148tt8so62kfr5h244ps.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "193518879645-8vu1nstnoeio5qmr1ip6st5aapq9htst.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.jts.jtsboard"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
