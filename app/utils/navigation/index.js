@@ -4,7 +4,6 @@ import { DefaultTheme, DarkTheme } from '@react-navigation/native';
 
 import { HEADER_BACK, HEADER_BACKGROUND, HEADER_TITLE } from '../../constants/colors';
 import { themes } from '../../constants/colors';
-import sharedStyles from '../../views/Styles';
 
 export * from './animations';
 
@@ -23,7 +22,6 @@ export const outsideHeader = {
 	},
 	headerBackTitle: null,
 	headerTintColor: HEADER_BACK,
-	headerTitle: () => <Image style={sharedStyles.navigationHeaderImage} source={{ uri: 'logo_oblong' }} />,
 	headerLayoutPreset: 'center',
 	headerRight: () => <View />
 };

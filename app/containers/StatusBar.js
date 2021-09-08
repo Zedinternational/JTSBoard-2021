@@ -2,7 +2,7 @@ import React from 'react';
 import { StatusBar as StatusBarRN } from 'react-native';
 import PropTypes from 'prop-types';
 
-import { themes } from '../constants/colors';
+import {COLOR_BUTTON_PRIMARY_LIGHT, themes} from '../constants/colors';
 import { withTheme } from '../theme';
 
 const StatusBar = React.memo(({ theme, barStyle, backgroundColor }) => {
@@ -12,7 +12,7 @@ const StatusBar = React.memo(({ theme, barStyle, backgroundColor }) => {
 			barStyle = 'dark-content';
 		}
 	}
-	return <StatusBarRN backgroundColor={backgroundColor ?? themes[theme].headerBackground} barStyle={barStyle} animated />;
+	return <StatusBarRN backgroundColor={backgroundColor ?? COLOR_BUTTON_PRIMARY_LIGHT} barStyle={barStyle} animated />;
 });
 
 StatusBar.propTypes = {

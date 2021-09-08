@@ -10,3 +10,12 @@ function createRequestTypes(base, types = defaultTypes) {
 
 export const APP = createRequestTypes('APP', ['START', 'READY', 'INIT', 'INIT_LOCAL_SETTINGS', 'SET_MASTER_DETAIL']);
 export const APP_STATE = createRequestTypes('APP_STATE', ['FOREGROUND', 'BACKGROUND', 'INACTIVE']);
+
+// Login events
+export const LOGIN = createRequestTypes('LOGIN', [
+	...defaultTypes,
+	'RESET',
+]);
+export const USER = createRequestTypes('USER', ['SET']);
+export const LOGOUT = 'LOGOUT';
+

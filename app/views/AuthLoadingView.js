@@ -5,7 +5,6 @@ import {
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import I18n from '../i18n';
 import StatusBar from '../containers/StatusBar';
 import { withTheme } from '../theme';
 import { themes } from '../constants/colors';

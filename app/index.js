@@ -7,8 +7,7 @@ import { SafeAreaProvider, initialWindowMetrics } from 'react-native-safe-area-c
 import {
     defaultTheme,
     newThemeState,
-    subscribeTheme,
-    unsubscribeTheme
+    subscribeTheme
 } from './utils/theme';
 import store from './lib/createStore';
 import { ThemeContext } from './theme';

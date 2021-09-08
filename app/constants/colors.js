@@ -1,7 +1,6 @@
-import { isIOS, isAndroid } from '../utils/deviceInfo';
-
 export const COLOR_DANGER = '#f5455c';
-export const COLOR_BUTTON_PRIMARY = '#66A9DD';
+export const COLOR_BUTTON_PRIMARY = '#997D1EFF';
+export const COLOR_BUTTON_PRIMARY_LIGHT = '#dcb841';
 export const COLOR_BUTTON_SECONDARY = '#C4CFD5';
 export const COLOR_BUTTON_DEFAULT = '#EBEBEB';
 export const COLOR_BUTTON_DANGER = '#F95522';
@@ -46,7 +45,7 @@ export const STATUS_COLORS = {
 };
 
 export const HEADER_BACKGROUND = '#FFF';
-export const HEADER_TITLE = '#0C0D0F';
+export const HEADER_TITLE = '#FFF';
 export const HEADER_BACK = '#13202f';
 
 export const SWITCH_TRACK_COLOR = {
@@ -74,7 +73,7 @@ export const themes = {
 		otherMsgText: '#0C0D0F',
 		ownAuxiliaryText: '#e3e2e2',
 		otherAuxiliaryText: '#51555f',
-		bodyText: '#2f343d',
+		bodyText: '#997D1EFF',
 		backdropColor: '#000000',
 		dangerColor: '#f5455c',
 		successColor: '#2de0a5',
@@ -93,8 +92,8 @@ export const themes = {
 		headerBorder: '#B2B2B2',
 		headerBackground: '#EEEFF1',
 		headerSecondaryBackground: '#EEEFF1',
-		headerTintColor: '#6C727A',
-		headerTitleColor: '#0C0D0F',
+		headerTintColor: '#fff',
+		headerTitleColor: '#fff',
 		headerSecondaryText: '#1d74f5',
 		toastBackground: '#0C0D0F',
 		videoBackground: '#1f2329',

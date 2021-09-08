@@ -14,6 +14,20 @@ export default StyleSheet.create({
     containerScrollView: {
         padding: 15
     },
+    titleBar: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 44
+    },
+    titleText: {
+        fontSize: 16,
+        color: 'white'
+    },
+    headerContainer: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: 210
+    },
     label: {
         lineHeight: 40,
         height: 40,
