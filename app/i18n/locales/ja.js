@@ -9,5 +9,7 @@ export default {
     Password_Validation: 'パスワードには６文字以上の英数字を設定ください',
     Forgot_Password: 'パスワードを忘れですか?',
     Send: '送信',
-    Cancel: 'キャンセル'
+    Cancel: 'キャンセル',
+    My_Shop: 'マイショップ',
+    Log_Out: 'ログアウト'
 };

@@ -85,17 +85,17 @@ class SingUpView extends React.Component{
             const user = {
                 name: name,
                 email: email,
-                password: password,
-                avatar: null,
+                password: password
             }
 
             firebaseSdk.signUp(user)
-                .then(async (user) => {
+                .then(async () => {
                     this.setState({isLoading: false});
                     showToast('登録に成功しました。');
                     navigation.pop();
                 })
                 .catch((err) => {
+                    console.log('error', err);
                     showErrorAlert('登録に失敗しました。', 'エラー');
                     this.setState({isLoading: false});
                 })

@@ -26,7 +26,7 @@ export default StyleSheet.create({
     headerContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        height: 210
+        height: 240
     },
     label: {
         lineHeight: 40,

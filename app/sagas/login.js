@@ -3,22 +3,22 @@ import {put, takeLatest} from 'redux-saga/effects';
 import * as types from '../actions/actionsTypes';
 import {setUser} from "../actions/login";
 import AsyncStorage from "@react-native-community/async-storage";
-// import {CURRENT_USER} from "../constants/keys";
-// import firebaseSdk from "../lib/firebaseSdk";
+import {CURRENT_USER} from "../constants/keys";
+import firebaseSdk from "../lib/firebaseSdk";
 import {appStart, ROOT_INSIDE, ROOT_OUTSIDE} from "../actions/app";
 
 
 const handleLoginSuccess = function* handleLoginSuccess({ data }) {
 	yield put(setUser(data));
 	try{
-		// yield firebaseSdk.setFcmToken(data.id);
+		yield firebaseSdk.setFcmToken(data.id);
 	} catch (e) {}
 	yield put(appStart({root: ROOT_INSIDE}));
 };
 
 const handleLogout = function* handleLogout() {
-	// yield AsyncStorage.removeItem(CURRENT_USER);
-	// yield firebaseSdk.signOut();
+	yield AsyncStorage.removeItem(CURRENT_USER);
+	yield firebaseSdk.signOut();
 	yield put(appStart({root: ROOT_OUTSIDE}));
 };
 

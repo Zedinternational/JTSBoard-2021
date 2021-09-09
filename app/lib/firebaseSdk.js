@@ -109,33 +109,81 @@ const firebaseSdk = {
                 .then((res) => {
                     const userInfo = {
                         userId: res.user.uid,
-                        type: 100, // User: 100
                         name: user.name,
                         email: user.email,
-                        avatar: '',
-                        address: '',
-                        interests: "",
-                        age: 0,
-                        bio: '',
-                        ratingTotal: 0,
-                        ratingCount: 0,
-                        isBanned: false,
-                        token: '',
-                        qbId: 0,
-                        friends: [],
-                        activities: [],
-                        outdoor: [],
+                        username: '',
+                        image: '',
+                        image1: '',
+                        image2: '',
+                        salon_name: '',
+                        company_name: '',
+                        has_branch: '',
+                        employee_pin_number: '',
+                        customer_pin_number: '',
+                        avr_customer: '',
+                        advertisement: '',
+                        employee_number: '',
+                        website: '',
+                        kana: '',
+                        gender: '',
+                        cash_box: '',
+                        cash_box_date: '',
+                        dob: '',
+                        tel: '',
+                        other_tel: '',
+                        zip_code: '',
+                        city: '',
+                        address1: '',
+                        address2: '',
+                        prefecture: '',
+                        is_admin: 0,
+                        subscription_of_news: 0,
+                        job: '',
+                        user_emp_code: '',
+                        know_about_company: '',
+                        how_did_you_come: '',
+                        verification_code: '',
+                        status: '',
+                        description: '',
+                        sales_code: '',
+                        sb_username: '',
+                        sb_password: '',
+                        salon_board_status: '',
+                        first_name: '',
+                        last_name: '',
+                        role: '',
+                        login_status: '',
+                        stripe_payment_status: '',
+                        subscription_current_period_end: '',
+                        stripe_plan_status: '',
+                        device_token: '',
+                        device_type: '',
+                        over_time: '',
+                        qr_code: '',
+                        month_start_date: '',
+                        month_end_date: '',
+                        lunch_time_start: null,
+                        lunch_time_end: null,
+                        old_user_id: null,
+                        salon_type: '',
+                        request_from: '',
+                        gmail_username: '',
+                        gmail_password: '',
+                        latitude: '',
+                        longitude: '',
+                        created_at: Date.now(),
+                        updated_at: Date.now(),
                     };
                     this.createUser(userInfo).then(() => {
                         resolve(userInfo);
                     }).catch((err) => {
-                        console.log('error', err);
+                        console.log('create user error', err);
                         reject(err);
                     });
 
                 })
                 .catch((err) => {
-                    console.log('error', err);
+                    console.log('sign up error', err);
                     reject(err);
                 });
         })
@@ -186,7 +234,7 @@ const firebaseSdk = {
 
     getUser(id){
         return new Promise((resolve, reject) => {
-            firebase.firestore()
+            firestore()
                 .collection(this.TBL_users)
                 .get()
                 .then(snapshot => {
@@ -209,7 +257,7 @@ const firebaseSdk = {
 
     getData(kind = ''){
         return new Promise((resolve, reject) => {
-            firebase.firestore()
+            firestore()
                 .collection(kind)
                 .get()
                 .then(snapshot => {
@@ -231,12 +279,12 @@ const firebaseSdk = {
     setData(kind = '', act, item){
         return new Promise((resolve, reject) => {
             if (act === DB_ACTION_ADD) {
-                firebase.firestore()
+                firestore()
                     .collection(kind)
                     .add(item)
                     .then((res) => {
                         let itemWithID = {...item, id: res.id};
-                        firebase.firestore()
+                        firestore()
                             .collection(kind)
                             .doc(res.id)
                             .update(itemWithID)
@@ -251,7 +299,7 @@ const firebaseSdk = {
                         reject(err);
                     })
             } else if (act === DB_ACTION_UPDATE) {
-                firebase.firestore()
+                firestore()
                     .collection(kind)
                     .doc(item.id)
                     .update(item)
@@ -262,7 +310,7 @@ const firebaseSdk = {
                         reject(err);
                     })
             } else if (act === DB_ACTION_DELETE) {
-                firebase.firestore()
+                firestore()
                     .collection(kind)
                     .doc(item.id)
                     .delete()
@@ -299,7 +347,7 @@ const firebaseSdk = {
         const status = (await statusRef.once('value')).val();
         console.log('chatter status', status);
         if(!status || status === 'offline'){
-            await firebase.firestore().collection(this.TBL_ROOM).doc(roomId).update({lastMessage: message.message, confirmUser: message.receiver});
+            await firestore().collection(this.TBL_ROOM).doc(roomId).update({lastMessage: message.message, confirmUser: message.receiver});
             if(receiver.token) {
                 const text = `${receiver.firstName} ${receiver.lastName} sent new Message: ${message.message}`;
                 this.sendNotifications([receiver.token], {
@@ -313,7 +361,7 @@ const firebaseSdk = {
                 })
             }
         }
-        return await firebase.firestore().collection(this.TBL_MESSAGE).add(message);
+        return await firestore().collection(this.TBL_MESSAGE).add(message);
     },
 
     onOnline(roomId, userId){

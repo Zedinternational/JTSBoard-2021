@@ -9,5 +9,7 @@ export default {
     Password_Validation: 'Alpha/Number, Min Length: 6',
     Forgot_Password: 'Forgot your password?',
     Send: 'Send',
-    Cancel: 'Cancel'
+    Cancel: 'Cancel',
+    Profile: '',
+    Log_Out: ''
 };

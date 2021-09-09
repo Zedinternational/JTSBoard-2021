@@ -6,13 +6,14 @@ import {connect} from 'react-redux';
 
 import Navigation from './lib/Navigation';
 import {getActiveRouteName, navigationTheme} from './utils/navigation';
-import {ROOT_LOADING, ROOT_OUTSIDE} from './actions/app';
+import {ROOT_INSIDE, ROOT_LOADING, ROOT_OUTSIDE} from './actions/app';
 
 // Stacks
 import AuthLoadingView from './views/AuthLoadingView';
 
 import OutsideStack from './stacks/OutsideStack';
 import {ThemeContext} from './theme';
+import InsideStack from "./stacks/InsideStack";
 
 
 // App
@@ -35,7 +36,6 @@ const App = React.memo(({ root, isMasterDetail }) => {
             theme={navTheme}
             ref={Navigation.navigationRef}
             onStateChange={(state) => {
-                const previousRouteName = Navigation.routeNameRef.current;
                 Navigation.routeNameRef.current = getActiveRouteName(state);
             }}
         >
@@ -51,6 +51,12 @@ const App = React.memo(({ root, isMasterDetail }) => {
                         <Stack.Screen
                             name='OutsideStack'
                             component={OutsideStack}
+                        />
+                    ) : null}
+                    {root === ROOT_INSIDE  ? (
+                        <Stack.Screen
+                            name='OutsideStack'
+                            component={InsideStack}
                         />
                     ) : null}
                 </>
