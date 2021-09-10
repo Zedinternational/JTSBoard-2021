@@ -109,13 +109,13 @@ const firebaseSdk = {
                 .then((res) => {
                     const userInfo = {
                         userId: res.user.uid,
-                        name: user.name,
+                        name: '',
                         email: user.email,
                         username: '',
                         image: '',
                         image1: '',
                         image2: '',
-                        salon_name: '',
+                        salon_name: user.salon_name,
                         company_name: '',
                         has_branch: '',
                         employee_pin_number: '',

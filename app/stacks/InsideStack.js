@@ -8,9 +8,10 @@ import {
 import {createDrawerNavigator} from "@react-navigation/drawer";
 
 import SidebarView from "../views/SidebarView";
-import HomeView from "../views/HomeView";
-import CustomerFormView from "../views/CustomerFormView";
 
+import HomeView from "../views/HomeView";
+import MyShopView from "../views/MyShopView";
+import CustomerFormView from "../views/CustomerFormView";
 
 // Outside
 const Inside = createStackNavigator();
@@ -23,6 +24,11 @@ const InsideStack = () => {
 				name='Home'
 				component={HomeView}
 				options={HomeView.navigationOptions}
+			/>
+			<Inside.Screen
+				name='MyShop'
+				component={MyShopView}
+				options={MyShopView.navigationOptions}
 			/>
 			<Inside.Screen
 				name='CustomerForm'

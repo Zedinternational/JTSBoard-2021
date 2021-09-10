@@ -34,7 +34,7 @@ class SingUpView extends React.Component{
     constructor(props) {
         super(props);
         this.state = {
-            name: '',
+            salon_name: '',
             email: '',
             password: '',
             password_confirm: '',
@@ -43,9 +43,9 @@ class SingUpView extends React.Component{
     }
 
     isValid = () => {
-        const { name, email, password, password_confirm} = this.state;
+        const { salon_name, email, password, password_confirm} = this.state;
 
-        if(!name.length){
+        if(!salon_name.length){
             showToast('ユーザー名を空白にすることはできません');
             return false;
         }
@@ -80,10 +80,10 @@ class SingUpView extends React.Component{
         if(this.isValid()){
             this.setState({isLoading: true});
             const {navigation} = this.props;
-            const {name, email, password} = this.state;
+            const {salon_name, email, password} = this.state;
 
             const user = {
-                name: name,
+                salon_name: salon_name,
                 email: email,
                 password: password
             }
@@ -123,14 +123,15 @@ class SingUpView extends React.Component{
                                 inputRef={(e) => {
                                     this.nameInput = e;
                                 }}
-                                placeholder={I18n.t('Name')}
+                                placeholder={'サロン名'}
                                 returnKeyType='next'
                                 keyboardType='twitter'
                                 textContentType='oneTimeCode'
-                                onChangeText={value => this.setState({name: value})}
+                                onChangeText={value => this.setState({salon_name: value})}
                                 onSubmitEditing={() => {
                                     this.emailInput.focus();
                                 }}
+                                large
                                 theme={theme}
                             />
                             <TextInput
@@ -145,6 +146,7 @@ class SingUpView extends React.Component{
                                 onSubmitEditing={() => {
                                     this.passwordInput.focus();
                                 }}
+                                large
                                 theme={theme}
                             />
                             <TextInput
@@ -157,6 +159,7 @@ class SingUpView extends React.Component{
                                 textContentType='oneTimeCode'
                                 onChangeText={value => this.setState({password: value})}
                                 onSubmitEditing={() => { this.passwordConfirmInput.focus(); }}
+                                large
                                 theme={theme}
                             />
                             <TextInput
@@ -168,6 +171,7 @@ class SingUpView extends React.Component{
                                 secureTextEntry
                                 textContentType='oneTimeCode'
                                 onChangeText={value => this.setState({password_confirm: value})}
+                                large
                                 theme={theme}
                             />
                             <View style={styles.bottomContainer}>

@@ -58,11 +58,11 @@ class HomeView extends React.Component {
                             <Image style={styles.menuImage} source={images.menu_form}/>
                             <Text style={styles.menuText}>アンケートフォーム</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.goTo()} style={[styles.menuContainer, styles.borderHorizontal, styles.borderBottom]}>
+                        <TouchableOpacity onPress={() => this.goTo('CustomerDetail')} style={[styles.menuContainer, styles.borderHorizontal, styles.borderBottom]}>
                             <Image style={styles.menuImage} source={images.menu_calendar}/>
                             <Text style={styles.menuText}>カレンダー</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={() => this.goTo()} style={[styles.menuContainer, styles.borderBottom]}>
+                        <TouchableOpacity onPress={() => this.goTo('CustomerList')} style={[styles.menuContainer, styles.borderBottom]}>
                             <Image style={styles.menuImage} source={images.menu_customers}/>
                             <Text style={styles.menuText}>顧客情報</Text>
                         </TouchableOpacity>

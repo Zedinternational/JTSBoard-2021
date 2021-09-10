@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
 		paddingTop: 5
 	},
 	inputContainer: {
-		marginBottom: isTablet?20:10
+		marginBottom: 10
 	},
 	label: {
 		marginBottom: 10,
@@ -28,11 +28,15 @@ const styles = StyleSheet.create({
 	},
 	input: {
 		...sharedStyles.textRegular,
-		height: isTablet?60:40,
-		fontSize: isTablet?20:16,
+		height: 40,
+		fontSize: 16,
 		paddingHorizontal: isIOS?8:14,
 		borderWidth: 1,
 		borderRadius: 4
+	},
+	largeInput: {
+		height: 60,
+		fontSize: 20,
 	},
 	inputIconLeft: {
 		paddingLeft: 45
@@ -74,6 +78,7 @@ export default class RCTextInput extends React.PureComponent {
 		placeholder: PropTypes.string,
 		left: PropTypes.element,
 		onIconRightPress: PropTypes.func,
+		large: PropTypes.bool,
 		theme: PropTypes.string
 	}
 
@@ -116,11 +121,11 @@ export default class RCTextInput extends React.PureComponent {
 	render() {
 		const { showPassword } = this.state;
 		const {
-			label, left, required, error, loading, secureTextEntry, containerStyle, inputRef, iconLeft, iconRight, inputStyle, testID, placeholder, theme, ...inputProps
+			label, left, required, error, loading, secureTextEntry, containerStyle, inputRef, iconLeft, iconRight, inputStyle, testID, placeholder, large, theme, ...inputProps
 		} = this.props;
 		const { dangerColor } = themes[theme];
 		return (
-			<View style={[styles.inputContainer, containerStyle]}>
+			<View style={[styles.inputContainer, containerStyle, large && {marginBottom: 20}]}>
 				{label ? (
 					<Text
 						contentDescription={null}
@@ -139,6 +144,7 @@ export default class RCTextInput extends React.PureComponent {
 					<TextInput
 						style={[
 							styles.input,
+							large && styles.largeInput,
 							iconLeft && styles.inputIconLeft,
 							(secureTextEntry || iconRight) && styles.inputIconRight,
 							{

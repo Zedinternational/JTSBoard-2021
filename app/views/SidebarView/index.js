@@ -33,10 +33,10 @@ class SidebarView extends React.Component{
 
         this.menus = [
             {
-                id: 'profile',
+                id: 'my_shop',
                 name: I18n.t('My_Shop'),
                 icon: images.profile_unselected,
-                route: 'profile',
+                route: 'MyShop',
             },
         ]
     }

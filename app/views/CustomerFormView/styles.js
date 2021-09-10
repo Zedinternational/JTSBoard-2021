@@ -7,12 +7,17 @@ export default StyleSheet.create({
         paddingHorizontal: 18,
     },
     formRow: {
+        marginTop: 8,
         flexDirection: 'row',
         alignItems: 'flex-end',
         width: '100%'
     },
     inputContainer: {
         width: '50%',
+        paddingHorizontal: 8
+    },
+    inputFullContainer: {
+        width: '100%',
         paddingHorizontal: 8
     },
     submitBtn: {

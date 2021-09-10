@@ -139,6 +139,7 @@ class SingInView extends React.Component {
                                 onSubmitEditing={() => {
                                     this.passwordInput.focus();
                                 }}
+                                large
                                 theme={theme}
                             />
                             <TextInput
@@ -150,6 +151,7 @@ class SingInView extends React.Component {
                                 secureTextEntry
                                 textContentType='oneTimeCode'
                                 onChangeText={value => this.setState({password: value})}
+                                large
                                 theme={theme}
                             />
                             <View style={styles.forgotContainer}>
